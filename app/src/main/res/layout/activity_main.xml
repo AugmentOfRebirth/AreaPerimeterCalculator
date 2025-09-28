@@ -46,6 +46,144 @@
         tools:visibility="visible" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/const_v_triangle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="49dp"
+            android:text="Base"
+            app:layout_constraintEnd_toStartOf="@+id/et_v_base"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginEnd="39dp"
+            android:text="Height"
+            app:layout_constraintEnd_toStartOf="@+id/et_v_height"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <EditText
+            android:id="@+id/et_v_base"
+            android:layout_width="190dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="108dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_v_height"
+            android:layout_width="211dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="101dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView9"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="244dp"
+            android:layout_marginEnd="92dp"
+            android:text="area of triangle: 1/2 * base * height"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="304dp"
+            android:layout_marginEnd="64dp"
+            android:text="perimeter of triangle: base(side a) + side b + side c"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="172dp"
+            android:text="Side B"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:text="Side C"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+        <EditText
+            android:id="@+id/et_v_sideB"
+            android:layout_width="188dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="164dp"
+            android:layout_marginEnd="104dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="0"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_v_sideC"
+            android:layout_width="188dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="204dp"
+            android:layout_marginEnd="104dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="0"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_v_computedAreaPerimeterTriangle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="132dp"
+            android:text="Area = 0 Perimeter = 0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cont_v_circle"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -54,7 +192,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sp_v_shapes">
+        app:layout_constraintTop_toBottomOf="@+id/sp_v_shapes"
+        tools:visibility="invisible">
 
         <TextView
             android:id="@+id/textView3"
@@ -112,170 +251,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/const_v_triangle"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginBottom="7dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:visibility="invisible">
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="34dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="49dp"
-            android:text="Base"
-            app:layout_constraintEnd_toStartOf="@+id/et_v_base"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="34dp"
-            android:layout_marginTop="21dp"
-            android:layout_marginEnd="39dp"
-            android:text="Height"
-            app:layout_constraintEnd_toStartOf="@+id/et_v_height"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-        <EditText
-            android:id="@+id/et_v_base"
-            android:layout_width="190dp"
-            android:layout_height="39dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="108dp"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            android:text="0"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/et_v_height"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="101dp"
-            android:layout_marginBottom="18dp"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            android:text="0"
-            app:layout_constraintBottom_toTopOf="@+id/et_v_sideA"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView9"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="244dp"
-            android:layout_marginEnd="92dp"
-            android:text="area of triangle: 1/2 * base * height"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="304dp"
-            android:layout_marginEnd="64dp"
-            android:text="perimeter of triangle: side a + side b + side c"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="37dp"
-            android:text="Side A"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Side B"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="32dp"
-            android:text="Side C"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
-        <EditText
-            android:id="@+id/et_v_sideA"
-            android:layout_width="188dp"
-            android:layout_height="38dp"
-            android:layout_marginTop="124dp"
-            android:layout_marginEnd="104dp"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            android:text="0"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/et_v_sideB"
-            android:layout_width="188dp"
-            android:layout_height="38dp"
-            android:layout_marginTop="164dp"
-            android:layout_marginEnd="104dp"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            android:text="0"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/et_v_sideC"
-            android:layout_width="188dp"
-            android:layout_height="38dp"
-            android:layout_marginTop="204dp"
-            android:layout_marginEnd="104dp"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            android:text="0"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_v_computedAreaPerimeterTriangle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:layout_marginEnd="132dp"
-            android:text="Area = 0 Perimeter = 0"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout

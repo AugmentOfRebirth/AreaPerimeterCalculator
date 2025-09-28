@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
     //perimeter = side a, side b, and side c
     EditText et_j_base;
     EditText et_j_height;
-    EditText et_j_sideA;
     EditText et_j_sideB;
     EditText et_j_sideC;
 
@@ -81,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
         //Triangle
         et_j_base = findViewById(R.id.et_v_base);
         et_j_height = findViewById(R.id.et_v_height);
-        et_j_sideA = findViewById(R.id.et_v_sideA);
         et_j_sideB = findViewById(R.id.et_v_sideB);
         et_j_sideC = findViewById(R.id.et_v_sideC);
         cont_j_triangleView = findViewById(R.id.const_v_triangle);
@@ -236,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count)
             {
-                setAreaPerimeterTriangle(et_j_base.getText().toString(), et_j_height.getText().toString(), et_j_sideA.getText().toString(), et_j_sideB.getText().toString(), et_j_sideC.getText().toString());
+                setAreaPerimeterTriangle(et_j_base.getText().toString(), et_j_height.getText().toString(), et_j_sideB.getText().toString(), et_j_sideC.getText().toString());
             }
         });
 
@@ -253,26 +251,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                setAreaPerimeterTriangle(et_j_base.getText().toString(), et_j_height.getText().toString(), et_j_sideA.getText().toString(), et_j_sideB.getText().toString(), et_j_sideC.getText().toString());
+                setAreaPerimeterTriangle(et_j_base.getText().toString(), et_j_height.getText().toString(), et_j_sideB.getText().toString(), et_j_sideC.getText().toString());
             }
         }));
-
-        et_j_sideA.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                setAreaPerimeterTriangle(et_j_base.getText().toString(), et_j_height.getText().toString(), et_j_sideA.getText().toString(), et_j_sideB.getText().toString(), et_j_sideC.getText().toString());
-            }
-        });
 
         et_j_sideB.addTextChangedListener(new TextWatcher() {
             @Override
@@ -287,7 +268,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                setAreaPerimeterTriangle(et_j_base.getText().toString(), et_j_height.getText().toString(), et_j_sideA.getText().toString(), et_j_sideB.getText().toString(), et_j_sideC.getText().toString());
+                setAreaPerimeterTriangle(et_j_base.getText().toString(), et_j_height.getText().toString(), et_j_sideB.getText().toString(), et_j_sideC.getText().toString());
             }
         });
 
@@ -304,7 +285,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                setAreaPerimeterTriangle(et_j_base.getText().toString(), et_j_height.getText().toString(), et_j_sideA.getText().toString(), et_j_sideB.getText().toString(), et_j_sideC.getText().toString());
+                setAreaPerimeterTriangle(et_j_base.getText().toString(), et_j_height.getText().toString(), et_j_sideB.getText().toString(), et_j_sideC.getText().toString());
             }
         });
     }
@@ -344,9 +325,9 @@ public class MainActivity extends AppCompatActivity {
         tv_j_areaPerimeterCircle.setText("Area = " + area + "\nPerimeter = " + perimeter);
     }
 
-    public void setAreaPerimeterTriangle(String baseS, String heightS, String sideAS, String sideBS, String sideCS)
+    public void setAreaPerimeterTriangle(String baseS, String heightS, String sideBS, String sideCS)
     {
-        if(baseS.isEmpty() || heightS.isEmpty())
+        if(baseS.isEmpty() || heightS.isEmpty() || sideBS.isEmpty() || sideCS.isEmpty())
         {
             return;
         }
@@ -354,12 +335,11 @@ public class MainActivity extends AppCompatActivity {
         double base = Double.parseDouble(baseS);
         double height = Double.parseDouble(heightS);
 
-        double sideA = Double.parseDouble(sideAS);
         double sideB = Double.parseDouble(sideBS);
         double sideC = Double.parseDouble(sideCS);
 
         double area = .5 * base * height;
-        double perimeter = sideA + sideB + sideC;
+        double perimeter = base + sideB + sideC;
 
         tv_j_areaPerimeterTriangle.setText("Area = " + area + "\nPerimeter = " + perimeter);
     }
